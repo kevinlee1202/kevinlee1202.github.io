@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yi-Hsiu Lee</title>
+<meta name="description" content="Yi-Hsiu Lee — robot learning researcher. Vision-language-action models, in-context imitation learning, and real-robot manipulation systems.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+<!-- ============ Hero ============ -->
+<header class="hero">
+  <div class="hero-text">
+    <h1>Yi-Hsiu Lee</h1>
+    <p class="role">Robot Learning Researcher</p>
+    <p class="intro">
+      I build and study robot manipulation policies — from motion-planning stacks running on
+      factory floors to vision-language-action models deployed on a real humanoid.
+      My research asks why a policy that <em>understands</em> an instruction can still fail to
+      <em>follow</em> it, and how robots can adapt to new tasks from a few demonstrations
+      instead of task-specific retraining.
+    </p>
+    <nav class="links">
+      <a href="mailto:r07522802@ntu.edu.tw">Email</a>
+      <a href="assets/Yi-Hsiu_Lee_Academic_CV.pdf">CV (PDF)</a>
+      <a href="https://github.com/kevinlee1202">GitHub</a>
+    </nav>
+  </div>
+  <div class="portrait" aria-hidden="true">
+    <!-- TODO: replace with <img src="assets/portrait.jpg" alt="Yi-Hsiu Lee"> -->
+    <div class="portrait-placeholder">YL</div>
+  </div>
+</header>
+
+<!-- ============ News ============ -->
+<section>
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="date">Nov 2026</span> Running in-context imitation learning experiments (SynthICL) — the next step after <em>Knowing Isn't Following</em>.</li>
+    <li><span class="date">Sep 2026</span> Submitted <em>Knowing Isn't Following</em> to ICRA 2027 (first author).</li>
+    <li><span class="date">Aug 2026</span> Submitted <em>Semantic Re-anchoring for Hybrid Manipulation Policies</em> to WACV 2027 (first author).</li>
+    <li><span class="date">2026</span> Deployed NVIDIA GR00T N1.5 / N1.7 pick-and-place on a real Techman humanoid; joined Prof. Min Sun's Visual Learning Lab (NTHU) as a research assistant.</li>
+  </ul>
+</section>
+
+<!-- ============ Research ============ -->
+<section>
+  <h2>Research</h2>
+  <p class="research-lede">
+    One question runs through my work: <strong>how do we make a robot's actions depend on the
+    task it was given, rather than the scenes it has memorized?</strong>
+  </p>
+
+  <article class="paper">
+    <h3>Knowing Isn&rsquo;t Following: Where the Instruction Stops Mattering in a Vision-Language-Action Policy</h3>
+    <p class="meta"><strong>Yi-Hsiu Lee</strong>, Tzu-Yu Chuang, Ching-Hsiang Chang, Yi-Ting Chen, Min Sun, Yuan-Fu Yang · under review, ICRA 2027</p>
+    <p>
+      One-stage autoregressive VLAs — action tokens inside the language-modeling stream — follow
+      instructions far better than a two-stage baseline (82.2% vs. 0/180 on held-out task
+      recombinations). Yet they still inherit scene-bound shortcuts: in one setting the model
+      names the correct target while grasping the familiar object in 19 of 20 trials. By probing
+      internal activations we localize where the instruction stops influencing the action pathway,
+      and show that a targeted intervention on that representation flips the behavior.
+    </p>
+  </article>
+
+  <article class="paper">
+    <h3>Semantic Re-anchoring for Hybrid Manipulation Policies</h3>
+    <p class="meta"><strong>Yi-Hsiu Lee</strong>, Tzu-Yu Chuang, Ching-Hsiang Chang, Yung-Hsuan Lo, Yi-Ting Chen, Min Sun, Yuan-Fu Yang · under review, WACV 2027</p>
+    <p>
+      A VLM grounds the target and guides the approach while a wrist-view, delta-action policy
+      performs the local interaction — restoring manipulation across changed object placements
+      where an end-to-end policy breaks. Its limitation (two separately engineered stages) is
+      what pushed me toward studying how semantics couple to action <em>inside</em> one policy.
+    </p>
+  </article>
+
+  <article class="paper">
+    <h3>Ongoing: in-context imitation learning</h3>
+    <p>
+      Can a policy infer a new task&rsquo;s structure from a few demonstrations at inference time,
+      reusing its manipulation skills without retraining? I am studying training objectives and
+      counterfactual evaluations that force a policy to read the <em>demonstration</em> rather
+      than the scene — continuing the mechanistic thread of <em>Knowing Isn&rsquo;t Following</em>.
+    </p>
+  </article>
+</section>
+
+<!-- ============ Systems ============ -->
+<section>
+  <h2>Robots I&rsquo;ve Shipped</h2>
+  <div class="projects">
+    <article class="project">
+      <video controls preload="none" poster="assets/poster_deploy.jpg" src="assets/real_robot_deployment.mp4"></video>
+      <h3>VLA on a real humanoid</h3>
+      <p>NVIDIA GR00T N1.5 → N1.7 pick-and-place deployed on a Techman humanoid — fine-tuning, evaluation, and the failure modes that motivate my research.</p>
+    </article>
+    <article class="project">
+      <video controls preload="none" poster="assets/poster_teleop.jpg" src="assets/teleperation_kit_demo.webm"></video>
+      <h3>Quest&nbsp;3 teleoperation kit</h3>
+      <p>One GUI for a dual-arm robot: hardware checks, synchronized multi-camera episode recording, and in-app policy deployment — closing the loop from demonstration to evaluation.</p>
+    </article>
+  </div>
+  <p class="systems-more">
+    Earlier systems work: raised pick-and-place success from 89% to 99.7% by rebuilding Techman&rsquo;s
+    motion-planning stack · humanoid MPC and whole-body teleoperation at Galaxea AI ·
+    20&nbsp;Hz real-time trajectory optimization for autonomous driving at ITRI ·
+    kinematics, collision, and visualization infrastructure at XYZ Robotics.
+  </p>
+</section>
+
+<!-- ============ Experience ============ -->
+<section>
+  <h2>Experience</h2>
+  <ul class="timeline">
+    <li><span class="date">2026 –</span><div><strong>NTHU Visual Learning Lab</strong> — Research Assistant (Prof. Min Sun). VLA instruction following, compositional generalization, action representations.</div></li>
+    <li><span class="date">2025 –</span><div><strong>Techman Robot</strong> — Embodied Intelligence Engineer. End-to-end robot-learning pipeline: teleoperation, XR streaming, data collection, training, evaluation; humanoid VLA deployment.</div></li>
+    <li><span class="date">2024 – 25</span><div><strong>Galaxea AI</strong> — Planning &amp; Control Engineer. Humanoid MPC (OCS2), diffusion-policy imitation learning, precise teleoperation via continuous IK.</div></li>
+    <li><span class="date">2023 – 24</span><div><strong>ITRI</strong> — Autonomous Driving Algorithm Engineer. Real-time trajectory planning pipelines (Apollo-based).</div></li>
+    <li><span class="date">2022 – 23</span><div><strong>XYZ Robotics</strong> — Robotics Engineer. Kinematics / collision / RVIZ infrastructure from the ground up.</div></li>
+    <li><span class="date">2021 – 22</span><div><strong>Techman Robot</strong> — Motion Planning Engineer. Planning-stack refactor: pick-and-place success 89% → 99.7%.</div></li>
+  </ul>
+</section>
+
+<!-- ============ Education ============ -->
+<section>
+  <h2>Education</h2>
+  <ul class="timeline">
+    <li><span class="date">2018 – 21</span><div><strong>National Taiwan University</strong> — M.S. Mechanical Engineering (System Control). GPA 4.07/4.3, top 10%. Thesis: dynamic trajectory planning and control for dual robotic arms.</div></li>
+    <li><span class="date">2014 – 18</span><div><strong>National Taiwan University</strong> — B.S. Mechanical Engineering.</div></li>
+  </ul>
+</section>
+
+<footer>
+  <p>Yi-Hsiu Lee · <a href="mailto:r07522802@ntu.edu.tw">r07522802@ntu.edu.tw</a> · Taipei, Taiwan</p>
+</footer>
+
+</main>
+</body>
+</html>
